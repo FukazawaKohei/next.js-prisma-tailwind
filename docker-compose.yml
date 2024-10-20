@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:8.0.40
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: service_name
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ROOT_PASSWORD: ""
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
